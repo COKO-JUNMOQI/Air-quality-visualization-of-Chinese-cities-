@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  li {
+    list-style: none;
+  }
+  @font-face {
+    font-family: electronicFont;
+    src: url(../font/DS-DIGIT.TTF);
+  }
+  select{
+    position: absolute;
+    top: .15rem;
+    right: .625rem;
+    width: 1rem;
+    height: 0.4rem;
+    font-size: 0.25rem;
+  }
+  .showTime{
+    color: rgb(191, 191, 191);
+    position: absolute;
+    top: 0.375rem;
+    right: 1.9rem;
+    font-size: 0.22rem;
+  }
+  .menu{
+    display:flex;
+    height: 36px;
+    width: 13rem;
+    position: absolute;
+    top:20px;
+    left:6.3rem;
+  }
+  .menu li{
+    list-style: none;
+    float: left;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
+  }
+  .menu a{
+    font-size: 0.24rem;
+    text-decoration:none;
+    background-color: rgb(109, 154, 196);
+    font-weight: bold;
+    color:rgb(39, 38, 38);display:inline-block;width:2rem;
+    height:0.45rem;
+    line-height:35px;border:1px solid #CCC;border-radius:6px;text-align:center;
+  }
+  .menu a:hover{
+    color:rgb(216, 216, 216);
+    background-color: rgb(69, 91, 150);
+  }
+  body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-repeat: no-repeat;
+      background: -webkit-radial-gradient(50% 35%, farthest-corner,#034f8e,#034987,#02366d,#002353);
+      background-size: cover;
+      /* 行高是字体1.15倍 */
+      line-height: 1.15;
+  }
+  header {
+    position: relative;
+    height: 1.25rem;
+    background: url(../images/head_bg.png) no-repeat top center;
+    background-size: 100% 100%;
+  }
+  header h1 {
+    font-size: 0.4rem;
+    color: rgb(218,249,255);
+    text-align: left;
+    line-height: 0.7rem;
+    padding-left: 20px;
+  }
+  
+  .mainbox {
+    min-width: 1024px;
+    max-width: 1920px;
+    padding: 0.125rem 0.125rem 0;
+    display: flex;
+  }
+  .mainbox .column {
+    flex: 2;
+  }
+  .mainbox .column:nth-child(2) {
+
+    margin: 0 0.125rem 0.1875rem;
+    overflow: hidden;
+    flex: 4;
+  }
+  .panel {
+    position: relative;
+    height: 5.875rem;
+    border: 1px solid rgba(25, 186, 139, 0.17);
+    background: rgba(255, 255, 255, 0.04) url(../images/line\(1\).png);
+    padding: 0 0.1875rem 0.5rem;
+    margin-bottom: 0.1875rem;
+  }
+  .panel::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #02a6b5;
+    border-left: 2px solid #02a6b5;
+    border-radius: 20%;
+  }
+  .panel::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #02a6b5;
+    border-right: 2px solid #02a6b5;
+    border-radius: 20%;
+  }
+  .panel .panel-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  .panel .panel-footer::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #02a6b5;
+    border-left: 2px solid #02a6b5;
+    border-radius: 20%;
+  }
+  .panel .panel-footer::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #02a6b5;
+    border-right: 2px solid #02a6b5;
+    border-radius: 20%;
+  }
+  .line{
+      height: 11.875rem;
+      width: 8rem;
+  }
+  .cl{
+      width: 13rem;
+  }
+  .panel h2 {
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #fff;
+    font-size: 0.25rem;
+    font-weight: 400;
+  }
+  .panel h2 a {
+    margin: 0 0.1875rem;
+    color: #fff;
+    text-decoration: underline;
+  }
+  .panel .chart {
+    height: 4.8rem;
+  }
+
+  .map {
+    position: relative;
+    height: 8.125rem;
+  }
+  .map .chart {
+    position: absolute;
+    top: -90px;
+    left: 0;
+    z-index: 5;
+    height: 9.125rem;
+    width: 100%;
+  }
+  .chart1{
+    height: 10.8rem;
+  }
+  .map .map1,
+  .map .map2,
+  .map .map3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6.475rem;
+    height: 6.475rem;
+    background: url(../images/map.png) no-repeat;
+    background-size: 100% 100%;
+    opacity: 0.3;
+  }
+  .map .map2 {
+    width: 8.0375rem;
+    height: 8.0375rem;
+    background-image: url(../images/lbx.png);
+    opacity: 0.6;
+    animation: rotate 15s linear infinite;
+    z-index: 2;
+  }
+  .map .map3 {
+    width: 7.075rem;
+    height: 7.075rem;
+    background-image: url(../images/jt.png);
+    animation: rotate1 10s linear infinite;
+  }
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  @keyframes rotate1 {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    html {
+      font-size: 42px !important;
+    }
+  }
+  @media screen and (min-width: 1920) {
+    html {
+      font-size: 80px !important;
+    }
+  }
+
+
+  #threemain #title {
+    height: 0.6rem;
+    color: #7c7c7c;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    border: 1px solid rgb(209, 209, 209);
+  }
+  #threemain #title span:nth-of-type(1) {
+    margin-left: 1.1rem;
+  }
+  #threemain #title span:nth-of-type(2) {
+    margin-left: 2rem;
+  }
+  #title span:nth-of-type(3) {
+    margin-left: 2.3rem;
+  }
+  #threemain #main dd:nth-of-type(2n+1) {
+    background-color: #f7f7f7;
+  }
+  #threemain #main dd:nth-of-type(2n) {
+    background-color: #e0e0e0;
+  }
+  #threemain dd {
+    height: 0.5rem;
+  }
+  #threemain dd:nth-child(1) .num, #threemain dd:nth-child(2) .num, #threemain dd:nth-child(3) .num {
+    color: #00b92e;
+  }
+  #threemain .num {
+    width: 0.6rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    overflow: hidden;
+    font-weight: 300;
+    text-align: center;
+    font-size: 0.2rem;
+    padding-left: 0.25rem;
+    padding-right: 0.2rem;
+  }
+  #threemain .name {
+    height: 0.5rem;
+    width: 2rem;
+    overflow: hidden;
+    line-height: 0.5rem;
+    font-size: 0.18rem;
+    margin-left: 0.49rem;
+  }
+  #threemain .boxs {
+    width: 0.3rem;
+    height: 0.5rem;
+    overflow: hidden;
+  }
+  #threemain dd span {
+    display: inline-block;
+  }
+  #threemain .singer {
+    height: 0.5rem;
+    width: 2.4rem;
+    font-size: 0.18rem;
+    overflow: hidden;
+    line-height: 0.5rem;
+  }
+  #threemain .time {
+    height: 0.5rem;
+
+    font-size: 0.18rem;
+    overflow: hidden;
+    line-height: 0.5rem;
+  }
+  .quality{
+    width: 0.5rem;
+    height: 0.25rem;
+    line-height: 0.2rem;
+    border-radius: 3px;
+    text-align: center;
+    background-color: rgb(70,136,71);
+    margin-bottom: 0.06rem;
+    color: rgb(255, 255, 255);
+    font-size: 0.2rem;
+    vertical-align:middle;
+    display: inline-block;
+  }
+  #update{
+    position: absolute;
+    left: 0.5rem;
+    top: 0.3rem;
+    color: #CCC;
+  }
+  #img{
+    width: 7rem;
+    height: 5.1rem;
+  }
+  .knowledge{
+    width: 7rem;
+    height: 5.1rem;
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background-image: linear-gradient( rgb(208, 231, 255),rgb(208, 231, 255));
+    border: 1px solid green;
+    border-radius: 4px 4px 4px 4px;
+  }
+  .text1{
+    color: rgb(94, 94, 94);
+    font-size: 0.25rem;
+    padding-left: 0.2rem;
+  }
+  .text2{
+    color: rgb(104, 104, 104);
+    font-size: 0.2rem;
+    padding-left: 0.2rem;
+  }
+table {
+    background-color: #cfebf1;
+    clear: both;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid white;
+}
+table td{
+  border: 1px solid white;
+}
+.para{
+  font-size: 0.15rem;
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper nav .se{
+  background: linear-gradient(to right,#6ceeb1,#0065c4);
+  border-radius: 50px;
+  /* 添加动画过渡.贝塞尔曲线 */
+  transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55) ;
+  color: #fff;
+  /* 这里字体颜色改变需要加个动画过渡 */
+  transition: 0.6s;
+}
+
+
+.wrapper nav label a:hover{
+  background: linear-gradient(to right,#6ceeb1,#0065c4);
+  border-radius: 50px;
+  /* 添加动画过渡.贝塞尔曲线 */
+  transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55) ;
+}
+
+.wrapper{
+  /* 设置宽度为60%窗口高度 */
+  position: absolute;
+  top:10px;
+  left:6.2rem;
+  width: 47vw;
+  height: 0.6rem;
+  /* 设置以百分比计的行高： */
+  line-height: 0.6rem;
+  background-color: rgb(211, 211, 211);
+  /* 盒子阴影 */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.wrapper nav{
+  display: flex;
+  /* 生成相对定位的元素，相对于其正常位置进行定位。
+  因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。 */ 
+  position: relative;
+}
+
+.wrapper nav label{
+  flex: 1;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  /* 鼠标放上变小手 */
+  cursor: pointer;
+}
+
+.wrapper nav label a{
+  position: relative;
+  z-index: -1;
+  color: #333;
+  font-size: 0.185rem;
+  font-weight: 500;
+  /* 没有文本装饰 */
+  text-decoration: none;
+  display: -webkit-box;
+}
+
+.wrapper nav label a i{
+  font-size: 0.25rem;
+  margin: 0px 7px;
+}
+
+.wrapper nav input{
+  display: none;
+}
+
+.wrapper nav .sele{
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0px;
+  bottom: 0px;
+  /* 渐变背景 ,自左到右 */
+  background: linear-gradient(to right,#6ceeb1,#0065c4);
+  border-radius: 50px;
+  /* 添加动画过渡.贝塞尔曲线 */
+  transition: 0.6s cubic-bezier(0.68,-0.55,0.265,1.55) ;
+}
+
+
+.fa{
+  height: 0.25rem;
+  width: 0.25rem;
+}
+
+.w{
+  position: absolute;
+  left: 0.3rem;
+  bottom: 0.2rem;
+  background-color: #FFF;
+  height: 0.24rem;
+  width: 2rem;
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全国空气质量数据分析与可视化系统</title>
+  <link rel="stylesheet" href="../static/css/index.css"/>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/loader.css">
+</head>
+
+<body>
+  <header>
+    <h1>空气质量数据分析与可视化系统</h1>
+    <div class="showTime">当前时间：<span id="timespan"></span></div>
+
+    <div class="wrapper">
+      <nav>
+          <input type="radio" name="tab" id="home" checked>
+          <input type="radio" name="tab" id="comment" >
+          <input type="radio" name="tab" id="envelope" >
+          <input type="radio" name="tab" id="heart" >
+          <input type="radio" name="tab" id="user" >
+      
+          <label for="home" class="home">
+              <a href="/index" class="se">
+                  <i class="fa fa-globe" aria-hidden="true"></i>
+                 <div>全国空气质量分析</div> 
+              </a>
+          </label>
+          <label for="comment" class="comment">
+              <a href="/province-3">
+                  <i class="fa fa-map" aria-hidden="true"></i>
+                <div>省份空气质量分析</div>  
+              </a>
+          </label>
+          <label for="envelope" class="envelope">
+              <a href="/search">
+                  <i class="fa fa-building" aria-hidden="true"></i>
+                 <div>城市空气质量分析</div> 
+              </a>
+          </label>
+          <label for="heart" class="heart">
+              <a href="/knowledge">
+                  <i class="fa fa-list-ol" aria-hidden="true"></i>
+                  <div>AQI实时播报</div> 
+              </a>
+          </label>
+          <label for="user" class="user">
+              <a href="/advise">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                 <div>防治与出行建议</div> 
+              </a>
+          </label>
+          <div class="tab"></div>
+      </nav>
+    </div>
+
+    
+  </header>
+  <section class="mainbox">
+    <div class="column">
+      <div class="panel bar">
+        <h2>污染最严重地区实时排名</h2>
+        <div class="chart no1"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line">
+        <h2>月内空气质量天数占比</h2>
+        <div class="chart no2"></div>
+        <div class="panel-footer"></div>
+      </div>
+      
+    </div>
+    <div class="column">
+      <div class="map panel">
+        <div class="chart no3"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel mid">
+        <h2>月内PM2.5变化趋势</h2>
+        <div class="chart1 no4"></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="panel bar1">
+        <h2>空气最优秀地区实时排名</h2>
+        <div class="chart no5"></div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line1">
+        <h2>近期热搜</h2>
+        <div class="chart no6" style="height: 4.3rem;"></div>
+        <div class="panel-footer"></div>
+      </div>
+      
+    </div>
+  </section>
+
+  <div class="loader-wrapper">
+    <h1>加载中,请稍后</h1>
+
+    <div class="icon sun-shower">
+      <div class="cloud"></div>
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+      <div class="rain"></div>
+    </div>
+
+    <div class="icon thunder-storm">
+      <div class="cloud"></div>
+      <div class="lightning">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+      </div>
+    </div>
+
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+
+    <div class="icon flurries">
+      <div class="cloud"></div>
+      <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+      </div>
+    </div>
+
+    <div class="icon sunny">
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+    </div>
+
+    <div class="icon rainy">
+      <div class="cloud"></div>
+      <div class="rain"></div>
+    </div>
+
+
+  </div>
+
+  <script src="../static/js/flexible.js"></script>
+  <script src="../static/js/echarts.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="../static/js/china.js"></script>
+  <script src="../static/js/index.js"></script>
+  <script src="../static/js/myMap.js"></script>
+  <script src="https://assets.pyecharts.org/assets/echarts.min.js" type="text/javascript"></script>
+  <script src="https://assets.pyecharts.org/assets/jquery.min.js" type="text/javascript"></script>
+  <script src="https://assets.pyecharts.org/assets/jquery-ui.min.js" type="text/javascript"></script>
+</body>
+
+</html>

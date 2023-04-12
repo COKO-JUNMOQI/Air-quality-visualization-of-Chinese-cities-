@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>全国空气质量数据分析与可视化系统</title>
+  <link rel="stylesheet" href="../static/css/advise.css"/>
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/loader.css">
+</head>
+
+<body>
+  <header>
+    <h1>空气质量数据分析与可视化系统</h1>
+    <div class="showTime">当前时间：<span id="timespan"></span></div>
+    <div class="wrapper">
+      <nav>
+          <input type="radio" name="tab" id="home" checked>
+          <input type="radio" name="tab" id="comment" >
+          <input type="radio" name="tab" id="envelope" >
+          <input type="radio" name="tab" id="heart" >
+          <input type="radio" name="tab" id="user" >
+      
+          <label for="home" class="home">
+            <a href="/index">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+               <div>全国空气质量分析</div> 
+            </a>
+        </label>
+        <label for="comment" class="comment">
+            <a href="/province-3">
+                <i class="fa fa-map" aria-hidden="true"></i>
+              <div>省份空气质量分析</div>  
+            </a>
+        </label>
+        <label for="envelope" class="envelope">
+            <a href="/search">
+                <i class="fa fa-building" aria-hidden="true"></i>
+               <div>城市空气质量分析</div> 
+            </a>
+        </label>
+        <label for="heart" class="heart">
+            <a href="/knowledge">
+                <i class="fa fa-list-ol" aria-hidden="true"></i>
+                <div>AQI实时播报</div> 
+            </a>
+        </label>
+        <label for="user" class="user">
+            <a href="/advise" class="se">
+                <i class="fa fa-user" aria-hidden="true"></i>
+               <div>防治与出行建议</div> 
+            </a>
+        </label>
+          <div class="tab"></div>
+      </nav>
+    </div>
+  </header>
+  <section class="mainbox">
+    <div class="column">
+      <div class="panel line">
+        <h2>污染物防治建议</h2>
+        <div class="chart1 no1"></div>
+        <div class="panel-footer"></div>
+      </div>
+      
+    </div>
+   
+    <div class="column">
+      <div class="panel bar1">
+        <h2>出行建议</h2>
+        <div class="chart no2">
+            <div id="aqi">80</div>
+            <div class="rp">
+                <div id="quality">良</div>
+                <div id="advise">温馨提示：可以正常在户外活动，易敏感人群应减少外出。</div>
+            </div>
+            <div id="kepu">空气质量级别为二级，空气质量状况属于良。</div>
+            <div id="good"></div>
+            
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+      <div class="panel line1">
+        <h2>未来空气质量预报</h2>
+        <div class="chart no3">
+            <div class="fc">
+                <div class="ql">
+                    <div id="ql1">良</div>
+                    <div class="wuran">首要污染物:O3-8H</div>
+                </div>
+                <div id="day1"></div>
+            </div>
+            <div class="fc">
+                <div class="ql">
+                    <div id="ql2">优</div>
+                    <div class="wuran">首要污染物:O3-8H</div>
+                </div>
+                <div id="day2"></div>
+            </div>
+            <div class="fc">
+                <div class="ql">
+                    <div id="ql3">良</div>
+                    <div class="wuran">首要污染物:O3-8H</div>
+                </div>
+                <div id="day3"></div>
+            </div>
+            <div class="fc">
+                <div class="ql">
+                    <div id="ql4">优</div>
+                    <div class="wuran">首要污染物:NO2</div>
+                </div>
+                <div id="day4"></div>
+            </div>
+            <div class="fc">
+                <div class="ql">
+                    <div id="ql5">优</div>
+                    <div class="wuran">首要污染物:NO2,O3-8H</div>
+                </div>
+                <div id="day5"></div>
+            </div>
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+      
+    </div>
+
+    
+  </section>
+  <div class="loader-wrapper">
+    <h1>加载中,请稍后</h1>
+
+    <div class="icon sun-shower">
+      <div class="cloud"></div>
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+      <div class="rain"></div>
+    </div>
+
+    <div class="icon thunder-storm">
+      <div class="cloud"></div>
+      <div class="lightning">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+      </div>
+    </div>
+
+    <div class="icon cloudy">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+
+    <div class="icon flurries">
+      <div class="cloud"></div>
+      <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+      </div>
+    </div>
+
+    <div class="icon sunny">
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+    </div>
+
+    <div class="icon rainy">
+      <div class="cloud"></div>
+      <div class="rain"></div>
+    </div>
+
+
+  </div>
+
+  <script src="../static/js/flexible.js"></script>
+  <script src="../static/js/echarts.js"></script>
+  <script src="../static/js/jquery.min.js"></script>
+  <script src="../static/js/advise.js"></script>
+</body>
+
+</html>
